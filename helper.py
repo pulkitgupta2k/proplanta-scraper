@@ -135,4 +135,4 @@ def driver():
 # driver()
 # get_prices_egg("https://www.proplanta.de/markt-und-preis/rheinische-warenboerse/aktuelle-eierpreise-08-05-2020_notierungen1588957359.html")
 # pprint(proplanta("https://www.proplanta.de/markt-und-preis/butterpreise_notierungen_r418a25s0_seite_1_von_17.html"))
-get_prices_milk_butter("https://www.proplanta.de/markt-und-preis/agrarmarkt-berichte/butterpreise-und-kaesepreise-vom-13-05-2020_notierungen1589389483.html")
+# get_prices_milk_butter("https://www.proplanta.de/markt-und-preis/agrarmarkt-berichte/butterpreise-und-kaesepreise-vom-13-05-2020_notierungen1589389483.html")
