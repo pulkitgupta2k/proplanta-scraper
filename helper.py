@@ -232,47 +232,53 @@ def driver():
     
     butter_milk_inf = []
     for butter_milk in butter_milk_list:
-        temp = get_prices_milk_butter(butter_milk)
-        temp_l = []
-        temp_l.append(temp[0])
-        temp_l.append(temp[1]['Allgäu']['Markenbutter_geformt'][0])
-        temp_l.append(temp[1]['Allgäu']['Markenbutter_geformt'][1])
-        temp_l.append(temp[1]['Allgäu']['Markenbutter_lose'][0])
-        temp_l.append(temp[1]['Allgäu']['Markenbutter_lose'][1])
-        temp_l.append(temp[1]['Allgäu']['Allgäuer Emmentaler'][0])
-        temp_l.append(temp[1]['Allgäu']['Allgäuer Emmentaler'][1])
-        temp_l.append(temp[1]['Allgäu']['Emmentaler und Viereckhartkäse'][0])
-        temp_l.append(temp[1]['Allgäu']['Emmentaler und Viereckhartkäse'][1])
-        temp_l.append(temp[1]['Allgäu']['Kleinlimburger'][0])
-        temp_l.append(temp[1]['Allgäu']['Kleinlimburger'][1])
+        try:
+            temp = get_prices_milk_butter(butter_milk)
+            temp_l = []
+            temp_l.append(temp[0])
+            temp_l.append(temp[1]['Allgäu']['Markenbutter_geformt'][0])
+            temp_l.append(temp[1]['Allgäu']['Markenbutter_geformt'][1])
+            temp_l.append(temp[1]['Allgäu']['Markenbutter_lose'][0])
+            temp_l.append(temp[1]['Allgäu']['Markenbutter_lose'][1])
+            temp_l.append(temp[1]['Allgäu']['Allgäuer Emmentaler'][0])
+            temp_l.append(temp[1]['Allgäu']['Allgäuer Emmentaler'][1])
+            temp_l.append(temp[1]['Allgäu']['Emmentaler und Viereckhartkäse'][0])
+            temp_l.append(temp[1]['Allgäu']['Emmentaler und Viereckhartkäse'][1])
+            temp_l.append(temp[1]['Allgäu']['Kleinlimburger'][0])
+            temp_l.append(temp[1]['Allgäu']['Kleinlimburger'][1])
 
-        temp_l.append(temp[1]['Hannover']['Tagespreis Blockware'][0])
-        temp_l.append(temp[1]['Hannover']['Tagespreis Blockware'][1])
-        temp_l.append(temp[1]['Hannover']['Tagespreis Blockware'][2])
+            temp_l.append(temp[1]['Hannover']['Tagespreis Blockware'][0])
+            temp_l.append(temp[1]['Hannover']['Tagespreis Blockware'][1])
+            temp_l.append(temp[1]['Hannover']['Tagespreis Blockware'][2])
 
-        temp_l.append(temp[1]['Hannover']['Tagespreis Brotware'][0])
-        temp_l.append(temp[1]['Hannover']['Tagespreis Brotware'][1])
-        temp_l.append(temp[1]['Hannover']['Tagespreis Brotware'][2])
-        print(temp[0])
-        butter_milk_inf.append(temp_l)
+            temp_l.append(temp[1]['Hannover']['Tagespreis Brotware'][0])
+            temp_l.append(temp[1]['Hannover']['Tagespreis Brotware'][1])
+            temp_l.append(temp[1]['Hannover']['Tagespreis Brotware'][2])
+            print(temp[0])
+            butter_milk_inf.append(temp_l)
+        except:
+            pass
 
     eggs_inf = []
     for eggs in eggs_list:
-        temp = get_prices_egg(eggs)
-        temp_l = []
-        temp_l.append(temp[0])
-        temp_l.append(" - ".join(temp[1]['1-DE']['Güteklasse A, Gewichtklasse L']))
-        temp_l.append(" - ".join(temp[1]['1-DE']['Güteklasse A, Gewichtsklasse M']))
-        temp_l.append(" - ".join(temp[1]['1-DE']['Güteklasse A, Gewichtsklasse M']))
-        temp_l.append(temp[1]['1-DE']['Marktentwicklung'])
+        try:
+            temp = get_prices_egg(eggs)
+            temp_l = []
+            temp_l.append(temp[0])
+            temp_l.append(" - ".join(temp[1]['1-DE']['Güteklasse A, Gewichtklasse L']))
+            temp_l.append(" - ".join(temp[1]['1-DE']['Güteklasse A, Gewichtsklasse M']))
+            temp_l.append(" - ".join(temp[1]['1-DE']['Güteklasse A, Gewichtsklasse M']))
+            temp_l.append(temp[1]['1-DE']['Marktentwicklung'])
 
-        
-        temp_l.append(" - ".join(temp[1]['2-DE']['Güteklasse A, Gewichtklasse L']))
-        temp_l.append(" - ".join(temp[1]['2-DE']['Güteklasse A, Gewichtsklasse M']))
-        temp_l.append(" - ".join(temp[1]['2-DE']['Güteklasse A, Gewichtsklasse M']))
-        temp_l.append(temp[1]['2-DE']['Marktentwicklung'])
-        print(temp[0])
-        eggs_inf.append(temp_l)
+            
+            temp_l.append(" - ".join(temp[1]['2-DE']['Güteklasse A, Gewichtklasse L']))
+            temp_l.append(" - ".join(temp[1]['2-DE']['Güteklasse A, Gewichtsklasse M']))
+            temp_l.append(" - ".join(temp[1]['2-DE']['Güteklasse A, Gewichtsklasse M']))
+            temp_l.append(temp[1]['2-DE']['Marktentwicklung'])
+            print(temp[0])
+            eggs_inf.append(temp_l)
+        except:
+            pass
     
     gsheet_load(butter_milk_inf, eggs_inf)
 
