@@ -7,8 +7,13 @@ import json
 import time
 
 def getHTML(link):
-    req = requests.get(link)
-    html = req.content
+    try:
+        req = requests.get(link)
+        html = req.content
+    except:
+        time.sleep(60)
+        req = requests.get(link)
+        html = req.content
     return html
 
 def append_rows(self, values, value_input_option='RAW'):
