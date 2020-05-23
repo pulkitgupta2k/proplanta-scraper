@@ -38,8 +38,8 @@ def gsheet_load(butter_arrays, egg_arrays):
     butter_final = []
     egg_final = []
 
-    butter_sheet = client.open('proplanta').worksheet('Butter')
-    egg_sheet = client.open('proplanta').worksheet('Egg')
+    butter_sheet = client.open('proplanta_').worksheet('Butter')
+    egg_sheet = client.open('proplanta_').worksheet('Egg')
 
     butter_final = butter_sheet.get_all_values()
     egg_final = egg_sheet.get_all_values()
